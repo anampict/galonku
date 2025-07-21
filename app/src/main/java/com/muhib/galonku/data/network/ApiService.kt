@@ -17,6 +17,12 @@ data class AuthResponse(
 
 )
 
+data class UserResponse(
+    val id: String,
+    val email: String,
+    val role: String
+)
+
 data class ProductResponse(
     val message: String,
     val products: List<Product>
