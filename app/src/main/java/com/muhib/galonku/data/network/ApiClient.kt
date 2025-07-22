@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object ApiClient {
-    private const val BASE_URL = "http://192.168.100.60:8080/"
+    private const val BASE_URL = " https://eeb94679e5ac.ngrok-free.app"
 
     fun getApiService(context: Context): ApiService {
         val client = OkHttpClient.Builder()

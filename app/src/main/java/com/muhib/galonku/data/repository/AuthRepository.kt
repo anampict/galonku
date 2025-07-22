@@ -13,4 +13,9 @@ class AuthRepository(private val context: Context) {
     suspend fun register(user: User): Response<AuthResponse> {
         return apiService.registerUser(user)
     }
+
+    suspend fun login(user: User): Response<AuthResponse> {
+        return apiService.loginUser(user)
+
+    }
 }

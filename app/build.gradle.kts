@@ -65,6 +65,9 @@ dependencies {
     // Logging (optional)
     implementation ("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
+    // Jetpack Compose Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
