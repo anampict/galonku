@@ -1,6 +1,8 @@
-package com.muhib.galonku
+package com.muhib.galonku.pages.auth
 
+import android.content.Intent
 import android.os.Bundle
+import android.os.Looper
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -12,29 +14,30 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
+import com.muhib.galonku.pages.auth.login.LoginScreen
+import com.muhib.galonku.pages.auth.ui.theme.GalonkuTheme
+import androidx.lifecycle.ViewModelProvider
 import com.muhib.galonku.data.viewmodel.AuthViewModel
 import com.muhib.galonku.navigation.AppNavhost
-import com.muhib.galonku.pages.auth.AuthViewModelFactory
-import com.muhib.galonku.pages.auth.login.LoginScreen
-import com.muhib.galonku.pages.auth.register.RegisterScreen
-import com.muhib.galonku.pages.home.HomeScreen
-import com.muhib.galonku.ui.theme.GalonkuTheme
 
-class MainActivity : ComponentActivity() {
+class AuthActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        val factory = AuthViewModelFactory(applicationContext)
-        val authViewModel = ViewModelProvider(this, factory)[AuthViewModel::class.java]
+        // Buat factory dan ViewModel secara manual
+        val viewModelFactory = AuthViewModelFactory(applicationContext)
+        val viewModel = ViewModelProvider(this, viewModelFactory)[AuthViewModel::class.java]
         setContent {
             GalonkuTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-                    HomeScreen(navController = rememberNavController())
-
+                    AppNavhost(authViewModel = viewModel)
                 }
             }
         }
     }
 }
+
+
+

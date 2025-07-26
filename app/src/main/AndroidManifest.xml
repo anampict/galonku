@@ -15,25 +15,26 @@
         android:theme="@style/Theme.Galonku"
         tools:targetApi="31">
         <activity
-            android:name=".pages.auth.register.RegisterActivity"
+            android:name=".pages.auth.AuthActivity"
             android:exported="false"
-            android:label="@string/title_activity_register"
+            android:label="@string/title_activity_auth"
             android:theme="@style/Theme.Galonku" />
         <activity
-            android:name=".pages.auth.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login"
-            android:theme="@style/Theme.Galonku" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".pages.splashscreen.SplashActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_splash"
             android:theme="@style/Theme.Galonku">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Galonku">
         </activity>
     </application>
 

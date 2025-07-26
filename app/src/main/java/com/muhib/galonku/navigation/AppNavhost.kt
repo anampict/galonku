@@ -15,7 +15,6 @@ import com.muhib.galonku.pages.home.HomeScreen
 @Composable
 fun AppNavhost(authViewModel: AuthViewModel) {
     val navController = rememberNavController()
-    val authViewModel: AuthViewModel = viewModel()
 
     NavHost(
         navController = navController,
@@ -23,7 +22,7 @@ fun AppNavhost(authViewModel: AuthViewModel) {
     ) {
         composable(AppScreen.Home.route) { HomeScreen(navController) }
         composable(AppScreen.Register.route) { RegisterScreen(viewModel = authViewModel,navController) }
-        composable(AppScreen.Login.route) { LoginScreen(navController,viewModel = authViewModel) }
+        composable(AppScreen.Login.route) { LoginScreen(navController, authViewModel) }
 
     }
 
